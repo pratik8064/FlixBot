@@ -23,12 +23,15 @@ button.botui-actions-buttons-button, input.botui-actions-text-input {
     margin: 0;
     font-size: 100%;
     line-height: normal;
-    vertical-align: baseline
+    vertical-align: baseline;
+    float: right;
+    width: 300px;
+
 }
 
 button.botui-actions-buttons-button::-moz-focus-inner, input.botui-actions-text-input::-moz-focus-inner {
     border: 0;
-    padding: 0
+    padding: 0;
 }
 
 button.botui-actions-buttons-button {
@@ -44,7 +47,7 @@ button.botui-actions-buttons-button {
 
 @media (min-width: 400px) {
     .botui-app-container {
-        width: 400px;
+        width: 800px;
         height: 500px;
         margin: 0 auto
     }
@@ -70,7 +73,7 @@ button.botui-actions-buttons-button {
 
 .botui-message-content {
     width: auto;
-    max-width: 85%;
+    max-width: 50%;
     display: inline-block
 }
 

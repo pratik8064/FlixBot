@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npm run start",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dialogflow": "^0.7.0",
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  }
+}

@@ -18,7 +18,7 @@ function greeting() {
                 setTimeout(function() {
                     getName();
                 }, 1000);
-            });f
+            });
         })
 }
 
@@ -48,21 +48,29 @@ function getQuery() {
             placeholder: 'I want to know about ...'
         }
     }).then(function(res) {
-        return botui.message.add({
-            delay: 1000,
-            loading: true,
-            content: "I'm sorry " + username + ", I don't have the data to answer your query."
-        })
-    }).then(function() {
-        return botui.message.add({
-            delay: 1000,
-            loading: true,
-            content: "Can I help you with something else?"
+
+        var url = "https://flix-bot.herokuapp.com/webhook";
+        var data = {
+            "query" : res.value
+        };
+        $.post(url,data,function(data, status){
+            var ans = data;
+            return botui.message.add({
+                delay: 1000,
+                loading: true,
+                content: ans
+            })/*.then(function() {
+                return botui.message.add({
+                    delay: 1000,
+                    loading: true,
+                    content: "Can I help you with something else?"
+                });
+            })*/.then(function() {
+                setTimeout(function() {
+                    getQuery();
+                }, 1000);
+            });
         });
-    }).then(function() {
-        setTimeout(function() {
-            getQuery();
-        }, 1000);
     });
 
 }
